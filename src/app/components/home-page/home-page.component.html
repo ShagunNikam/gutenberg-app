@@ -1,0 +1,27 @@
+<section class="homepage greyBg" *ngIf="!isVisible">
+    <div class="container">
+        <div class="homepage__wrapper">
+            <h1 class="homepage__title">Gutenberg Project</h1>
+            <p class="homepage__subtitle">
+                A social cataloging website that allows you to freely search its database of books, annotations,
+                and reviews.
+            </p>
+        </div>
+        <div class="homepage-index__wrapper">
+            <div class="list_wrapper">
+                <div class="list" *ngFor="let title of listOfLabel" (click)="getLableName(title.name)">
+                    <div class="list_content">
+                        <p class="card_title">
+                            <span class="title"> <i class="{{title.icon}}" aria-hidden="true"></i> {{title.name}}</span>
+                            <span class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="isVisible">
+    <app-booklist [title]=title (dataEvent)="receiveData($event)"></app-booklist>
+</section>

@@ -1,0 +1,32 @@
+<section class="booklist">
+    <div class="container">
+        <div class="title_wrapper">
+            <h2 (click)="backToPage()"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span> {{title}}</h2>
+        </div>
+        <div class="search_wrapper">
+            <div class="field_wrap">
+                <form action="">
+                    <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    <input type="text" class="search__field" placeholder="Search" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+                    <span class="close_icon" (click)="clearInputValue()"><i class="fa fa-times" aria-hidden="true"></i></span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="booklist_wraper greyBg">
+        <div class="container">
+            <div class="booklist_wraper__flex">
+                <div class="book_card" *ngFor="let list of getData | filter:name">
+                    <div class="card">
+                        <div class="img_wrap">
+                            <img src="../../../../assets/images/img1.jpg" alt="img">
+                        </div>
+                        <p class="img_title">{{list.title}}</p>
+                        <span class="author_name">{{list.authors[0].name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

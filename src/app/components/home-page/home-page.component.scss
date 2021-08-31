@@ -1,0 +1,72 @@
+@import '../../../assets/scss/variable';
+
+.homepage__wrapper {
+    padding-top: 30px;
+    .homepage__title {
+        font-size: $font_48;
+        color: $primary_color;
+        font-family: $boldFont;
+        margin-bottom: 15px;
+    }
+
+    .homepage__subtitle{
+        font-size: $font_12;
+        color: $dark_grey;
+        font-family: $boldFont;
+        font-weight: 600;
+    }
+}
+
+.homepage-index__wrapper{
+    margin-top: 50px;
+}
+
+.list_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .list {
+        width: 50%;
+        .list_content {
+            background: $white;
+            box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+            margin: 0px 50px 30px 0;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+
+            .card_title {
+                display: flex;
+                justify-content: space-between;
+
+                .title {
+                    font-size: $font_20;
+                    font-weight: $boldFont;
+                    font-weight: 600;
+                    color: $black;
+                    text-transform: uppercase;
+                   i {
+                        color: $primary_color;
+                        margin-right: 5px;
+                    }
+                }
+                .icon {
+                    color: $primary_color;
+                    font-size: $font_20;
+                }
+            }
+
+            @media (max-width: 768px) {
+                margin: 0px 10px 30px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+    }
+}
